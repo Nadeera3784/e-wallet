@@ -11,6 +11,10 @@
 		612CDC272B49F25C00FD1249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CDC262B49F25C00FD1249 /* ContentView.swift */; };
 		612CDC292B49F25D00FD1249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 612CDC282B49F25D00FD1249 /* Assets.xcassets */; };
 		612CDC2C2B49F25D00FD1249 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 612CDC2B2B49F25D00FD1249 /* Preview Assets.xcassets */; };
+		612CDC332B49F2D600FD1249 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CDC322B49F2D600FD1249 /* ChartView.swift */; };
+		612CDC352B49F30700FD1249 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CDC342B49F30700FD1249 /* HomeView.swift */; };
+		612CDC372B49F32B00FD1249 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CDC362B49F32B00FD1249 /* NotificationView.swift */; };
+		612CDC392B49F34500FD1249 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CDC382B49F34500FD1249 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		612CDC262B49F25C00FD1249 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		612CDC282B49F25D00FD1249 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		612CDC2B2B49F25D00FD1249 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		612CDC322B49F2D600FD1249 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		612CDC342B49F30700FD1249 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		612CDC362B49F32B00FD1249 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		612CDC382B49F34500FD1249 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,10 @@
 			isa = PBXGroup;
 			children = (
 				612CDC242B49F25C00FD1249 /* e_walletApp.swift */,
+				612CDC382B49F34500FD1249 /* ProfileView.swift */,
+				612CDC362B49F32B00FD1249 /* NotificationView.swift */,
+				612CDC342B49F30700FD1249 /* HomeView.swift */,
+				612CDC322B49F2D600FD1249 /* ChartView.swift */,
 				612CDC262B49F25C00FD1249 /* ContentView.swift */,
 				612CDC282B49F25D00FD1249 /* Assets.xcassets */,
 				612CDC2A2B49F25D00FD1249 /* Preview Content */,
@@ -138,7 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				612CDC272B49F25C00FD1249 /* ContentView.swift in Sources */,
+				612CDC352B49F30700FD1249 /* HomeView.swift in Sources */,
 				612CDC252B49F25C00FD1249 /* e_walletApp.swift in Sources */,
+				612CDC332B49F2D600FD1249 /* ChartView.swift in Sources */,
+				612CDC392B49F34500FD1249 /* ProfileView.swift in Sources */,
+				612CDC372B49F32B00FD1249 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
