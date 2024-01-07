@@ -64,30 +64,7 @@ struct ChartView: View {
             .padding([.top, .leading, .trailing])
             
             
-            VStack {
-                Chart(data) {
-                    LineMark(
-                        x: .value("Mount", $0.mount),
-                        y: .value("Value", $0.value)
-                    )
-                    .interpolationMethod(.catmullRom)
-                    .foregroundStyle(Color("COLOR_PRIMARY"))
-                    .symbol() {
-                       Circle()
-                        .fill(.white)
-                       .frame(width: 8, height: 8)
-                    }
-                    .symbolSize(30)
-                    PointMark(
-                        x: .value("Mount", $0.mount),
-                        y: .value("Value", $0.value)
-                    )
-                    .foregroundStyle(Color("COLOR_PRIMARY"))
-                }
-                .frame(height: 250)
-                .chartYAxis(.hidden)
-                
-            }
+          chart
             
             VStack {
                 HStack {
@@ -201,6 +178,33 @@ struct ChartView: View {
             .padding()
             
             Spacer()
+        }
+    }
+    
+    var chart: some View {
+        VStack {
+            Chart(data) {
+                LineMark(
+                    x: .value("Mount", $0.mount),
+                    y: .value("Value", $0.value)
+                )
+                .interpolationMethod(.catmullRom)
+                .foregroundStyle(Color("COLOR_PRIMARY"))
+                .symbol() {
+                   Circle()
+                    .fill(.white)
+                   .frame(width: 8, height: 8)
+                }
+                .symbolSize(30)
+                PointMark(
+                    x: .value("Mount", $0.mount),
+                    y: .value("Value", $0.value)
+                )
+                .foregroundStyle(Color("COLOR_PRIMARY"))
+            }
+            .frame(height: 250)
+            .chartYAxis(.hidden)
+            
         }
     }
 }

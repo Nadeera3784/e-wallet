@@ -33,71 +33,96 @@ struct NotificationView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        
-                        Text("Notifications")
-                            .font(.headline)
-                        
-                        ZStack {
-                            Circle()
-                                .foregroundColor(Color("COLOR_PRIMARY"))
-                                .frame(width: 20, height: 20)
-                            
-                            Text("2")
-                                .foregroundColor(.white)
-                                .font(.caption2)
-                        }
-                        .offset(x: -10, y: -10)
-                    }
+                    navigationBarLeading
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        // Action for 'mark all as read'
-                    }) {
-                        Text("mark all as read")
-                            .foregroundColor(Color("COLOR_PRIMARY"))
-                            .padding(8)
-                            .background(Color("COLOR_TRANSFER"))
-                            .cornerRadius(10)
-                    }
+                    navigationBarTrailing
                 }
             }
             .background(.white)
         }
     }
     
-    struct NotificationCard: View {
-        var imageName: String
-        var title: String
-        var time: String
-        var backgroundColor: Color
-        var foregroundColor: Color
-        
-        var body: some View {
-            HStack(alignment: .center) {
-                Image(systemName: imageName)
-                    .padding()
-                    .foregroundColor(foregroundColor)
-                    .background(backgroundColor)
-                    .cornerRadius(8)
-                    .font(.system(size: 20))
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(title)
-                        .fontWeight(.regular)
-                    Text(time)
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                }
-                
-                Spacer()
+    var navigationBarLeading: some View {
+            HStack {
+                Image(systemName: "chevron.left")
+                Text("Notifications").font(.headline)
+                notificationCountBadge
             }
-            .padding(.vertical, 8)
-            .background(Color.white)
-        }
     }
+    
+    var navigationBarTrailing: some View {
+          Button(action: {
+              // Action for 'mark all as read'
+          }) {
+              Text("mark all as read")
+                  .foregroundColor(Color.primaryColor)
+                  .padding(8)
+                  .background(Color.secondaryColor)
+                  .cornerRadius(10)
+          }
+      }
+    
+    var notificationCountBadge: some View {
+          ZStack {
+              Circle()
+                  .foregroundColor(Color.primaryColor)
+                  .frame(width: 20, height: 20)
+              Text("2")
+                  .foregroundColor(.white)
+                  .font(.caption2)
+          }
+          .offset(x: -10, y: -10)
+      }
+}
+
+struct NotificationCard: View {
+    var imageName: String
+    var title: String
+    var time: String
+    var backgroundColor: Color
+    var foregroundColor: Color
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            Image(systemName: imageName)
+                .commonImageStyle(
+                    backgroundColor: backgroundColor,
+                    foregroundColor: foregroundColor
+                )
+                .padding()
+                .cornerRadius(8)
+                .font(.system(size: 20))
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .fontWeight(.regular)
+                Text(time)
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+        }
+        .padding(.vertical, 8)
+        .background(Color.white)
+    }
+}
+
+extension Image {
+    func commonImageStyle(backgroundColor: Color, foregroundColor: Color) -> some View {
+        self.padding()
+            .foregroundColor(foregroundColor)
+            .background(backgroundColor)
+            .cornerRadius(8)
+            .font(.system(size: 20))
+    }
+}
+
+extension Color {
+    static let primaryColor = Color("COLOR_PRIMARY")
+    static let secondaryColor = Color("COLOR_TRANSFER")
 }
 
 #Preview {
